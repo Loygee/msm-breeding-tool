@@ -46,7 +46,7 @@ function calculateBreeding() {
   const p1 = document.getElementById('parent1').value;
   const p2 = document.getElementById('parent2').value;
   const resultsDiv = document.getElementById('results');
-  resultsDiv.innerHTML = ''; // Clear previous
+  resultsDiv.innerHTML = ''; // Clear previous results
 
   if (!p1 || !p2) {
     resultsDiv.innerHTML = `<p>Please select two monsters.</p>`;
@@ -62,6 +62,8 @@ function calculateBreeding() {
       (combo.parent1 === p2 && combo.parent2 === p1)
   );
 
+  console.log("Possible Combinations:", possible); // Debug
+
   if (possible.length === 0) {
     resultsDiv.innerHTML += `<p>No known offspring from this combination.</p>`;
     return;
@@ -69,7 +71,10 @@ function calculateBreeding() {
 
   possible.forEach(combo => {
     const monsterData = monsters.find(m => m.name === combo.result);
-    if (!monsterData) return;
+    if (!monsterData) {
+      resultsDiv.innerHTML += `<p>Error: Monster data not found for "${combo.result}".</p>`;
+      return;
+    }
 
     const card = document.createElement('div');
     card.className = 'result-card';
