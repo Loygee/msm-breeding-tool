@@ -1,0 +1,18 @@
+{
+  "monsters": [
+    { "id": "pom", "name": "Pom", "elements": ["Plant"] },
+    { "id": "clamble", "name": "Clamble", "elements": ["Plant", "Earth"] },
+    { "id": "tuttle", "name": "Tuttle", "elements": ["Plant", "Cold"] },
+    { "id": "noggin", "name": "Noggin", "elements": ["Air", "Cold"] },
+    { "id": "mammott", "name": "Mammott", "elements": ["Cold", "Earth"], "breeding_time": "30m" },
+    { "id": "feathers", "name": "Feathers", "elements": ["Air", "Water"] },
+    { "id": "t-rox", "name": "T-Rox", "elements": ["Fire", "Earth"] },
+    { "id": "shugabush", "name": "Shugabush", "elements": ["Plant", "Cold", "Air", "Water", "Earth", "Fire"], "breeding_time": "24h" }
+  ],
+  "combinations": [
+    { "parent1": "Clamble", "parent2": "Noggin", "result": "Mammott" },
+    { "parent1": "T-Rox", "parent2": "Feathers", "result": "Shugabush" },
+    { "parent1": "Pom", "parent2": "Noggin", "result": "Tuttle" },
+    { "parent1": "Pom", "parent2": "Clamble", "result": "Clamble" }
+  ]
+}
