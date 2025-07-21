@@ -1,21 +1,41 @@
 {
   "monsters": [
     {
-      "name": "Nimbus",
+      "name": "Tweedle",
       "elements": ["Air"],
-      "breeding_time": "30s"
+      "breeding_time": "4h"
     },
     {
-      "name": "PomPom",
-      "elements": ["Earth"],
-      "breeding_time": "15s"
+      "name": "Potbelly",
+      "elements": ["Plant"],
+      "breeding_time": "2h"
+    },
+		{
+      "name": "Noggin",
+      "elements": ["Noggin"],
+      "breeding_time": "5s"
+    },
+		{
+      "name": "Toe Jammer",
+      "elements": ["Water"],
+      "breeding_time": "1m"
+    },
+		{
+      "name": "Mammott",
+	      "elements": ["Cold"],
+      "breeding_time": "2m"
+    },
+		{
+      "name": "Dandidoo",
+      "elements": ["Air", "Plant"],
+      "breeding_time": "2h"
     }
   ],
   "combinations": [
     {
-      "parent1": "Nimbus",
-      "parent2": "PomPom",
-      "result": "Whisp"
+      "parent1": "Tweedle",
+      "parent2": "Potbelly",
+      "result": "Dandidoo"
     }
   ]
 }
