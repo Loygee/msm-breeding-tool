@@ -79,8 +79,9 @@ function showSuggestions(input, suggestionsList) {
       // Re-render suggestions for both inputs (to reflect updated exclusions)
       showSuggestions(input1, suggestions1);
       showSuggestions(input2, suggestions2);
-    });
-    }
+    }); // ← closes addEventListener
+  }); // ← closes forEach — THIS WAS MISSING!
+}
 
 // Hide suggestions when clicking outside
 document.addEventListener('click', (e) => {
