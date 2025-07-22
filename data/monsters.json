@@ -2,40 +2,67 @@
   "monsters": [
     {
       "name": "Tweedle",
+      "class": "Natural",
       "elements": ["Air"],
-      "breeding_time": "4h"
+      "breeding_time": "4 hours",
+      "islands": ["Cold, Air, Water, Earth"]
     },
     {
       "name": "Potbelly",
+      "class": "Nautral",
       "elements": ["Plant"],
-      "breeding_time": "2h"
+      "breeding_time": "2 hours",
+      "islands": ["Plant, Cold, Water, Earth"]
     },
-		{
+    {
       "name": "Noggin",
-      "elements": ["Noggin"],
-      "breeding_time": "5s"
+      "class": "Nautral",
+      "elements": ["Earth"],
+      "breeding_time": "5 seconds",
+      "islands": ["Plant, Air, Water, Earth"]
     },
-		{
+	  {
       "name": "Toe Jammer",
+      "class": "Nautral",
       "elements": ["Water"],
-      "breeding_time": "1m"
+      "breeding_time": "1 minute",
+      "islands": ["Plant, Cold, Air, Water"]
     },
-		{
+	  {
       "name": "Mammott",
-	      "elements": ["Cold"],
-      "breeding_time": "2m"
+      "class": "Nautral",
+      "elements": ["Cold"],
+      "breeding_time": "2 minutes",
+      "islands": ["Plant, Cold, Air, Earth"]
     },
-		{
+    {
       "name": "Dandidoo",
+      "class": "Natural",
       "elements": ["Air", "Plant"],
-      "breeding_time": "2h"
+      "breeding_time": "8 hours",
+      "islands": ["Cold, Water, Earth"]
+    },
+    {
+      "name": "Cybop",
+      "class": "Natural",
+      "elements": ["Air", "Earth"],
+      "breeding_time": "8 hours",
+      "islands": ["Air, Water, Earth"]
+    },
+    {
+      "name": "Quibble",
+      "class": "Natural",
+      "elements": ["Air", "Water"],
+      "breeding_time": "8 hours",
+      "islands": ["Cold, Air, Water"]
     }
   ],
   "combinations": [
-    {
-      "parent1": "Tweedle",
-      "parent2": "Potbelly",
-      "result": "Dandidoo"
-    }
+    { "parent1": "Tweedle", "parent2": "Potbelly", "result": "Dandidoo" },
+    { "parent1": "Tweedle", "parent2": "Noggin", "result": "Cybop" },
+    { "parent1": "Tweedle", "parent2": "Toe Jammer", "result": "Quibble" },
+    { "parent1": "PomPom", "parent2": "Nimbus", "result": "Whisp" },
+    { "parent1": "Tartini", "parent2": "PomPom", "result": "Dandidoo" },
+    { "parent1": "Nimbus", "parent2": "Tartini", "result": "Jingle" }
   ]
 }
