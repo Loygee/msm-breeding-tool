@@ -56,32 +56,30 @@ function showSuggestions(input, suggestionsList) {
     const li = document.createElement('li');
     li.textContent = monster.name;
     li.addEventListener('click', () => {
-      input.value = monster.name;
+  const chosenName = monster.name;
 
-      // Update selection state
-      if (input === input1) {
-        selectedMonster1 = monster.name;
-        selectedMonster2 = null; // Reset second
-        input2.value = '';       // Clear second input
-      } else {
-        selectedMonster2 = monster.name;
-        selectedMonster1 = null; // Reset first
-        input1.value = '';       // Clear first input
-      }
+  if (input === input1) {
+    // Prevent selecting the same as monster2
+    if (chosenName === selectedMonster2) return;
 
-      // Close both suggestion lists
-      suggestions1.innerHTML = '';
-      suggestions2.innerHTML = '';
+    selectedMonster1 = chosenName;
+    input1.value = chosenName;
+  } else {
+    // Prevent selecting the same as monster1
+    if (chosenName === selectedMonster1) return;
 
-      // Refresh the other input's suggestions
-      if (input === input1) {
-        showSuggestions(input2, suggestions2);
-      } else {
-        showSuggestions(input1, suggestions1);
-      }
-    });
-    suggestionsList.appendChild(li);
-  });
+    selectedMonster2 = chosenName;
+    input2.value = chosenName;
+  }
+
+  // Clear suggestion lists
+  suggestions1.innerHTML = '';
+  suggestions2.innerHTML = '';
+
+  // Re-render suggestions for both inputs (to reflect updated exclusions)
+  showSuggestions(input1, suggestions1);
+  showSuggestions(input2, suggestions2);
+});
 }
 
 // Hide suggestions when clicking outside
